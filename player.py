@@ -10,6 +10,7 @@ class Player:
         self.direction = vec(1, 0)
         self.stored_direction = None
         self.able_to_move = True
+        self.current_score = 0
 
     def update(self):
         if self.able_to_move:
@@ -38,6 +39,7 @@ class Player:
     
     def eat_coin(self):
         self.app.coins.remove(self.grid_pos)
+        self.current_score += 100
     
     def move(self, direction):
         self.stored_direction = direction
