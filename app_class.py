@@ -118,7 +118,7 @@ class App:
         # self.draw_grid()
         self.draw_text('HIGH SCORE: 0', self.screen, [
                        5, 0], START_TEXT_SIZE, WHITE, START_FONT)
-        self.draw_text('SCORE: 0', self.screen, [
+        self.draw_text('SCORE: {}'.format(self.player.current_score), self.screen, [
                        WIDTH//2+50, 0], START_TEXT_SIZE, WHITE, START_FONT)
         self.player.draw()
         pygame.display.update()
