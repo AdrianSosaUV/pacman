@@ -34,13 +34,13 @@ class Player:
 
     def on_coin(self):
         if self.grid_pos in self.app.coins:
-            return True
+            return self.verify_move()
         return False
-    
+
     def eat_coin(self):
         self.app.coins.remove(self.grid_pos)
         self.current_score += 100
-    
+
     def move(self, direction):
         self.stored_direction = direction
 
