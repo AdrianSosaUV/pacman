@@ -24,11 +24,21 @@ class Player:
                             self.app.cell_width//2)//self.app.cell_width+1
         self.grid_pos[1] = (self.pix_pos[1]-TOP_BOTTOM_BUFFER +
                             self.app.cell_height//2)//self.app.cell_height+1
+        if self.on_coin():
+            self.eat_coin()
 
     def draw(self):
         pygame.draw.circle(self.app.screen, PLAYER_COLOUR, (int(
             self.pix_pos.x), int(self.pix_pos.y)), self.app.cell_width//2-2)
 
+    def on_coin(self):
+        if self.grid_pos in self.app.coins:
+            return True
+        return False
+    
+    def eat_coin(self):
+        self.app.coins.remove(self.grid_pos)
+    
     def move(self, direction):
         self.stored_direction = direction
 
