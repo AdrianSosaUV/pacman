@@ -166,6 +166,8 @@ class App:
                        5, 0], START_TEXT_SIZE, WHITE, START_FONT)
         self.draw_text('SCORE: {}'.format(self.player.current_score), self.screen, [
                        WIDTH//2+50, 0], START_TEXT_SIZE, WHITE, START_FONT)
+        self.draw_text('LIFES: ', self.screen, [
+                       5, HEIGHT - 25], START_TEXT_SIZE, WHITE, START_FONT)
         self.player.draw()
         for enemy in self.enemies:
             enemy.draw()
