@@ -15,7 +15,7 @@ class Enemy(Entity):
         self.target = self.set_target()
         if self.target != self.grid_pos:
             self.pix_pos += self.direction * self.speed
-            if self.verify_move():
+            if self.check_move():
                 self.move()
         self.set_grid_pos()
 
@@ -24,33 +24,30 @@ class Enemy(Entity):
 
     def set_personality(self):
         if self.number == 0:
-            self.colour = OIKAKE
+            self.color = OIKAKE
             self.personality = "hunter"
             self.speed = 2
         if self.number == 1:
-            self.colour = MACHIBUSE
+            self.color = MACHIBUSE
             self.personality = "ambusher"
             self.speed = 1
         if self.number == 2:
-            self.colour = KIMAGURE
+            self.color = KIMAGURE
             self.personality = "wayward"
             self.speed = 1
         if self.number == 3:
-            self.colour = OTOBOKE
+            self.color = OTOBOKE
             self.personality = "fool"
             self.speed = 1
 
     def move(self):
         if self.personality == "hunter":
-            #            self.direction = self.Hunter()
             self.direction = self.path_dir(self.target)
         if self.personality == "ambusher":
-            #            self.direction = self.Ambusher()
             self.direction = self.path_dir(self.target)
         if self.personality == "wayward":
             self.direction = self.Wayward()
         if self.personality == "fool":
-            #            self.direction = self.Fool()
             self.direction = self.path_dir(self.target)
 
     def path_dir(self, target):
@@ -65,9 +62,9 @@ class Enemy(Entity):
         return path[1]
 
     def BFS(self, start, target):
-        grid = [[0 for x in range(28)] for x in range(30)]
+        grid = [[0 for x in range(COLS)] for x in range(ROWS)]
         for cell in self.app.walls:
-            if cell.x < 28 and cell.y < 30:
+            if cell.x < COLS and cell.y < ROWS:
                 grid[int(cell.y)][int(cell.x)] = 1
         queue = [start]
         path = []
@@ -82,7 +79,7 @@ class Enemy(Entity):
                 neighbours = [[0, -1], [1, 0], [0, 1], [-1, 0]]
                 for neighbour in neighbours:
                     if neighbour[0] + current[0] >= 0 and neighbour[0] + current[0] < len(grid[0]):
-                        if neighbour[1] + current[1] >= 0 and neighbour[1] + current[1] < len(grid[1]):
+                        if neighbour[1] + current[1] >= 0 and neighbour[1] + current[1] < len(grid):
                             next_cell = [neighbour[0] + current[0],
                                          neighbour[1] + current[1]]
                             if next_cell not in visited:
