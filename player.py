@@ -42,7 +42,7 @@ class Player(Entity):
     def draw_lifes(self):
         for x in range(self.lives):
             pygame.draw.circle(self.app.screen, CHERRY,
-                               (30 + 20 * x, HEIGHT - 15), self.radius)
+                               (80 + 20 * x, HEIGHT - 10), self.radius)
 
     def can_move(self):
         for wall in self.app.walls:
