@@ -3,7 +3,7 @@ from settings import *
 
 class Entity:
 
-    def __init__(self, app, pos, colour=None):
+    def __init__(self, app, pos, color=None):
         self.app = app
         self.grid_pos = pos
         self.starting_pos = pos
@@ -11,13 +11,13 @@ class Entity:
         self.direction = vec(0, 0)
         self.radius = int(self.app.cell_width // 2.3)
         self.stored_direction = None
-        self.colour = colour
+        self.color = color
 
     def update(self):
         pass
 
     def draw_character(self):
-        pygame.draw.circle(self.app.screen, self.colour, (int(
+        pygame.draw.circle(self.app.screen, self.color, (int(
             self.pix_pos.x), int(self.pix_pos.y)), self.radius)
 
     def move(self, direction):
@@ -27,7 +27,7 @@ class Entity:
         return vec((self.grid_pos.x*self.app.cell_width)+TOP_BOTTOM_BUFFER//2+self.app.cell_width//2,
                    (self.grid_pos.y*self.app.cell_height)+TOP_BOTTOM_BUFFER//2+self.app.cell_height//2)
 
-    def verify_move(self):
+    def check_move(self):
         if int(self.pix_pos.x + TOP_BOTTOM_BUFFER//2) % self.app.cell_width == 0:
             if self.direction == vec(1, 0) or self.direction == vec(-1, 0) or self.direction == vec(0, 0):
                 return True
