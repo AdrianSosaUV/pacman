@@ -4,7 +4,7 @@ from entity import *
 class Player(Entity):
 
     def __init__(self, app, pos):
-        super().__init__(app, pos, PLAYER_COLOUR)
+        super().__init__(app, pos, PLAYER_COLOR)
         self.able_to_move = True
         self.current_score = 0
         self.speed = 2
@@ -13,7 +13,7 @@ class Player(Entity):
     def update(self):
         if self.able_to_move:
             self.pix_pos += self.direction * self.speed
-        if self.verify_move():
+        if self.check_move():
             if self.stored_direction != None:
                 self.direction = self.stored_direction
             self.able_to_move = self.can_move()
