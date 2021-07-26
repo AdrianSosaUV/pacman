@@ -6,11 +6,11 @@ This is a little Pacman made with Python just for fun!
 
 ## Next steps
 
-* Use AI algoriths for path finding for the ghost
-* Create a Hall of fame, Top10 player's 
+* Use AI algorithms for path finding for the ghost
+* Create a Hall of fame, Top10 players 
 * Link to a DB for store the scores
 
-Maybe (just in case of boring in the job):
+Maybe (just in case of boring at work):
 * Add sounds
-* Add better graphs
+* Add better graphics
 * Add new levels 
