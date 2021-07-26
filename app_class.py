@@ -11,7 +11,7 @@ class App:
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         self.clock = pygame.time.Clock()
         self.running = True
-        self.state = 'Start'
+        self.state = "Start"
         self.cell_width = MAZE_WIDTH // COLS
         self.cell_height = MAZE_HEIGHT // ROWS
         self.walls = []
@@ -90,14 +90,14 @@ class App:
                 for xidx, char in enumerate(line):
                     if char == 'C':
                         self.coins.append(vec(xidx, yidx))
-        self.state = 'Playing'
+        self.state = "Playing"
 
     def reset_pos(self):
-        self.player.grid_pos = self.player.starting_pos
+        self.player.grid_pos = vec(self.player.starting_pos)
         self.player.pix_pos = self.player.get_pix_pos()
         self.player.direction *= 0
         for enemy in self.enemies:
-            enemy.grid_pos = enemy.starting_pos
+            enemy.grid_pos = vec(enemy.starting_pos)
             enemy.pix_pos = enemy.get_pix_pos()
             enemy.direction *= 0
 
@@ -108,7 +108,7 @@ class App:
             if event.type == pygame.QUIT:
                 self.running = False
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-                self.state = 'Playing'
+                self.state = "Playing"
 
     def start_update(self):
         pass
