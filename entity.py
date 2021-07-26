@@ -6,7 +6,7 @@ class Entity:
     def __init__(self, app, pos, color=None):
         self.app = app
         self.grid_pos = pos
-        self.starting_pos = pos
+        self.starting_pos = [pos.x, pos.y]
         self.pix_pos = self.get_pix_pos()
         self.direction = vec(0, 0)
         self.radius = int(self.app.cell_width // 2.3)
