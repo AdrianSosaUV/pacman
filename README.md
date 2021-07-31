@@ -16,16 +16,17 @@ clone this repository with the following command:
 
 ### Install dependencies 
 
-I recomend use pipenv:
+I recomend use pipenv. 
+
 Install pipenv:
 ```bash
   pip install pipenv
 ```
-activate pipenv shell:
+Activate pipenv shell:
 ```bash
   pipenv shell
 ```
-Just Install dependencies
+Install dependencies
 ```bash
   pipenv install
 ```
