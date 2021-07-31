@@ -1,6 +1,8 @@
 
 # Python Pacman
 [![GitHub license](https://img.shields.io/github/license/AdrianSosaUV/pacman?style=plastic)](https://github.com/AdrianSosaUV/pacman/blob/main/LICENSE)
+[![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/AdrianSosaUV/pacman)](https://www.python.org/downloads/release/python-391/)
+[![Pygame version](https://img.shields.io/badge/Pygame-2.0.1-yellow)](https://pypi.org/project/pygame)
 
 This is a little Pacman made with Python just for fun!
 
