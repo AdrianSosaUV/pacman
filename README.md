@@ -4,6 +4,36 @@
 
 This is a little Pacman made with Python just for fun!
 
+## Instructions
+
+### Clone this repository 
+clone this repository with the following command:
+```bash
+  git clone https://github.com/AdrianSosaUV/pacman.git
+```
+
+### Install dependencies 
+
+I recomend use pipenv:
+Install pipenv:
+```bash
+  pip install pipenv
+```
+activate pipenv shell:
+```bash
+  pipenv shell
+```
+Just Install dependencies
+```bash
+  pipenv install
+```
+    
+### PLAY!!
+Just start the game!
+```bash
+  python main.py
+```
+
 ## Next steps
 
 * Use AI algoriths for path finding for the ghost
